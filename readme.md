@@ -28,7 +28,9 @@ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --boots
 # Run multiple kafka servers
 
 ## Create new config properties files
-Example: create a config-2.properties file and edit the following properties
+Go in config folder and create a config-2.properties file
+
+### Edit the following properties
 1. broker.id=2 Change the id (default should be 0)
 2. listeners=PLAINTEXT://:9093 ==> Change the port number
 3. log.dirs=/tmp/kafka-logs-2 ==> Change the folder name
@@ -37,3 +39,8 @@ Example: create a config-2.properties file and edit the following properties
 ```bash
 bin/kafka-server-start.sh config/server-2.properties
 ```
+
+If you want to run new servers, create other config files and change the 3 properties, then run the server with the specified config-x.properties file
+
+## Edit config for a specific topic
+bin/kafka-configs --bootstrap-server localhost:9092 --entity-type topics --entity-name <topic-name> --alter --add-config min.insync.replicas=2
