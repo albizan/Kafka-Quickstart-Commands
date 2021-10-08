@@ -43,4 +43,4 @@ bin/kafka-server-start.sh config/server-2.properties
 If you want to run new servers, create other config files and change the 3 properties, then run the server with the specified config-x.properties file
 
 ## Edit config for a specific topic
-bin/kafka-configs --bootstrap-server localhost:9092 --entity-type topics --entity-name <topic-name> --alter --add-config min.insync.replicas=2
+bin/kafka-configs --bootstrap-server localhost:9092 --entity-type topics --entity-name `<topic-name>`--alter --add-config min.insync.replicas=2
