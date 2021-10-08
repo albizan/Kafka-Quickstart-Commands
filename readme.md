@@ -24,3 +24,11 @@ bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server local
 ```bash
 bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
 ```
+
+# Run multiple kafka servers
+
+## Create new config properties files
+Example: create a config-2.properties file and modify following properties
+1. broker.id ==> Use another id
+2. listeners=PLAINTEXT://:909x ==> Change the port
+3. log.dirs=/tmp/kafka-logs-x ==> Change the folder name in tmp folder
