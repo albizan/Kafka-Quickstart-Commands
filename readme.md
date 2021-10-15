@@ -44,3 +44,30 @@ If you want to run new servers, create other config files and change the 3 prope
 
 ## Edit config for a specific topic
 bin/kafka-configs --bootstrap-server localhost:9092 --entity-type topics --entity-name `<topic-name>`--alter --add-config min.insync.replicas=2
+
+
+# Other useful commands
+
+
+## Describe
+```bash
+bin/kafka-topics.sh --describe --topic partitioned-topic --bootstrap-server localhost:9092
+```
+
+## Consume messages from a specified partition
+```bash
+bin/kafka-console-consumer.sh --topic partitioned-topic  --partition 0 --bootstrap-server localhost:9092
+```
+
+
+## Consume messages from beginning
+```bash
+bin/kafka-console-consumer.sh --topic partitioned-topic  --from-beginning --bootstrap-server localhost:9092
+```
+
+
+## Consume messages from a specified partition with a specified offset value
+```bash
+bin/kafka-console-consumer.sh --topic partitioned-topic  --offset 2 --partition 2 --bootstrap-server localhost:9092
+```
+
