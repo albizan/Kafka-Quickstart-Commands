@@ -68,6 +68,6 @@ bin/kafka-console-consumer.sh --topic partitioned-topic  --from-beginning --boot
 
 ## Consume messages from a specified partition with a specified offset value
 ```bash
-bin/kafka-console-consumer.sh --topic partitioned-topic  --offset 2 --partition 2 --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --topic partitioned-topic  --offset <offset-value> --partition <partition-number> --bootstrap-server localhost:9092
 ```
 
